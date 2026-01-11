@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MedVision AI - Medical Imaging Platform Design System
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Medical Blue Theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary: Medical Blue #0A5ED7 */
+    --primary: 214 90% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Teal #3BB3B3 */
+    --secondary: 180 50% 47%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 180 50% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Risk Alert Colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+
+    --info: 214 90% 44%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 214 90% 44%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 214 90% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 22%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 25% 25%;
+    --sidebar-ring: 214 90% 44%;
+
+    /* Chart Colors */
+    --chart-1: 214 90% 44%;
+    --chart-2: 180 50% 47%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 25% 13%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 25% 13%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 214 90% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 50% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 180 50% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 45%;
+    --warning-foreground: 0 0% 10%;
+
+    --info: 214 90% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 214 90% 55%;
+
+    --sidebar-background: 215 25% 8%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 214 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 214 90% 55%;
+
+    --chart-1: 214 90% 55%;
+    --chart-2: 180 50% 50%;
+    --chart-3: 142 71% 50%;
+    --chart-4: 38 92% 55%;
+    --chart-5: 0 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .medical-card {
+    @apply bg-card rounded-lg border shadow-sm p-6 transition-all duration-200 hover:shadow-md;
+  }
+
+  .risk-high {
+    @apply bg-destructive text-destructive-foreground;
+  }
+
+  .risk-moderate {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .risk-low {
+    @apply bg-success text-success-foreground;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl border p-6 flex flex-col gap-2 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground transition-all duration-200;
+  }
+
+  .nav-link-active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80 dark:bg-black/80;
+  }
+}
